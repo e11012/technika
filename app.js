@@ -4,14 +4,20 @@ const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const PORT = process.env.PORT || 5000;
+require('dotenv').config();
 
 const app = express();
 app.use(express.static(__dirname + '/public'));
 require('./config/passport')(passport);
-const db = process.env.MONGOURI
-mongoose.connect(db, {useNewUrlParser:true})
-.then(() => console.log("db connected"))
-.catch(err => console.log(err));
+const db = require('./config/keys').DB_URI
+
+mongoose.connect(db, { useNewUrlParser: true})
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err))
+
+app.use(express.urlencoded({ extended: false }))
+
 app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.use('/', express.static('public'));
@@ -35,5 +41,4 @@ app.use('/', require('./routes/index'))
 app.use('/users', require('./routes/users'))
 app.use('/posts', require('./routes/post'))
 
-const PORT = process.env.PORT || 8000;
 app.listen(PORT, console.log(`Server started at port ${PORT}`));

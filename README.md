@@ -1,51 +1,29 @@
 # Technika
 
-A fandom-like wiki for Brooklyn nine-nine
+Technika  A fandom-like wiki for Brooklyn nine-nine  ---
 
----
+1. Clone Repo
 
-
-
-
-
-
-
-
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`USER_EMAIL`
-`PASSWORD`
-
-
-  
-
-    
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/e11012/technika.git
+```sh
+git clone https://github.com/e11012/technika.git
 ```
 
-Go to the project directory
+2. Setup Config keys
 
-```bash
-  cd technika
+> Edit file accordingly
+
+3. Install Dependencies
+
+```sh
+yarn
+# OR(npm)
+npm install
 ```
 
-Install dependencies
+4. Start the server
 
-```bash
-  npm install
+```sh
+yarn run dev
+# OR(npm)
+npm run dev
 ```
-
-Start the server
-
-```bash
-  npm start
-```
-
-  
