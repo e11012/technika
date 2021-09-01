@@ -8,8 +8,7 @@ const passport = require('passport');
 const app = express();
 app.use(express.static(__dirname + '/public'));
 require('./config/passport')(passport);
-const db = require('./config/keys').MongoURI;
-// const db = process.env.db
+const db = process.env.MONGOURI
 mongoose.connect(db, {useNewUrlParser:true})
 .then(() => console.log("db connected"))
 .catch(err => console.log(err));
