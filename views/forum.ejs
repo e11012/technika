@@ -15,7 +15,7 @@
     <h6 class="posted-at"><%= data[i].createdAt.toUTCString().slice(16) %></h6>
     </div>
     </div>
-    <div class="post-text"><%= data[i].article.slice(0, 200) %></div>
+    <div class="post-text"><%= data[i].article.slice(0, 200) + "..."%></div>
     <% let x = `posts/${data[i]._id}` %>
     <a href=<%= x %> class="read-more">Open Post</a>
     </div>
