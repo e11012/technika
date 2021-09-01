@@ -290,7 +290,7 @@ a {
 .hamburger {
   display: none;
 }
-.bar {
+.burger {
   display: block;
   width: 25px;
   height: 3px;
@@ -299,16 +299,16 @@ a {
   transition: all 0.3s ease-in-out;
   background-color: #101010;
 }
-.nav-menu {
+.menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 2%;
 }
-.nav-item {
+.navitem {
   margin-left: 5rem;
 }
-.nav-link {
+.link {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
@@ -318,10 +318,10 @@ a {
   letter-spacing: 0.2px;
   color: #737373;
 }
-.nav-link:hover {
-  color: #482ff7;
+.link:hover {
+  color: blue;
 }
-.nav-logo {
+.logo {
   padding-left: 1%;
   font-family: Montserrat;
   font-style: normal;
@@ -431,11 +431,11 @@ p {
     flex-grow: 0;
   }
 
-  .nav-menu.active {
+  .menu.active {
     left: 0;
   }
 
-  .nav-item {
+  .navitem {
     margin: 2.5rem 0;
   }
   .hero .left-col p {
@@ -458,17 +458,7 @@ p {
     display: block;
     cursor: pointer;
   }
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
 
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
 }
 @media only screen and (min-width: 1080px) {
   .hero-img {
@@ -663,7 +653,7 @@ p {
     color: #737373;
     flex: none;
   }
-  .nav-menu {
+  .menu {
     position: fixed;
     left: -100%;
     top: 5rem;
@@ -688,11 +678,11 @@ p {
     flex-grow: 0;
   }
 
-  .nav-menu.active {
+  .menu.active {
     left: 0;
   }
 
-  .nav-item {
+  .navitem {
     margin: 2.5rem 0;
   }
   .hero .left-col p {
@@ -714,15 +704,14 @@ p {
     display: block;
     cursor: pointer;
   }
-  .hamburger.active .bar:nth-child(2) {
+  .hamburger.active .burger:nth-child(2) {
     opacity: 0;
   }
 
-  .hamburger.active .bar:nth-child(1) {
+  .hamburger.active .burger:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-
-  .hamburger.active .bar:nth-child(3) {
+  .hamburger.active .burger:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
@@ -891,3 +880,4 @@ a.allposts {
 .hero{
 	padding: 20px;
 }
+
