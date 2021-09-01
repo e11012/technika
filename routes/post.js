@@ -2,19 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require("../models/User");
 const Post = require("../models/Post");
-//CREATE
-// router.post("/", async (req, res) => {
-//     const newPost = new Post(req.body)
-//     try{
-//         const savedPost = await newPost.save();
-//         let posts = await Post.find();
-//         const x = posts
-//         res.render("forum", {data: x})
-//         // res.status(200).json(savedPost)
-//     }catch(err){
-//         res.status(500).json(err)
-//     }
-// });
+
 router.post('/', async(req, res) => {
     const { username, title, article } = req.body;
     let errors = []
@@ -42,10 +30,7 @@ router.post('/', async(req, res) => {
                 const newPost = new Post(req.body)
                 try{
                     const savedPost = newPost.save().then( post =>
-                    // let posts = await Post.find();
-                    // const x = posts
                     res.render("singlepost", {data: post}))
-                    // res.status(200).json(savedPost)
                 }catch(err){
                     res.status(500).json(err)
             }
@@ -67,8 +52,6 @@ router.get("/", async(req, res)=>{
 router.get("/:id", async(req, res)=>{
     try{
         const post = await Post.findById(req.params.id);
-        // res.status(200).json(post)
-        // res.send("hello")
         const x = post
         res.render("singlepost", { data: post})
     }catch(err){
