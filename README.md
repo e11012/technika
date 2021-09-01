@@ -1,6 +1,6 @@
 # Technika
 
-A fandom-like wiki for Brooklyn nine-none
+A fandom-like wiki for Brooklyn nine-nine
 
 ---
 
